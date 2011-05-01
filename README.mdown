@@ -1,0 +1,21 @@
+## This package provides an R wrapper to the Data Science Toolkit API
+
+For more information on the these APIs see http://www.datasciencetoolkit.org
+
+*Late update: 2011-04-30*
+
+### Contact
+
+Ryan Elmore
+
+- Email: rtelmore@gmail.com
+
+### Installation
+
+To install this package from the source code available here, download the RDSTK.*.tar.gz file and R CMD INSTALL from the command line.
+
+### License
+
+Copyright (c) 2010, under the Simplified BSD License.
+For more information on FreeBSD see: http://www.opensource.org/licenses/bsd-license.php
+All rights reserved.
