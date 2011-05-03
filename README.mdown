@@ -2,8 +2,6 @@
 
 For more information on the these APIs see http://www.datasciencetoolkit.org
 
-*Late update: 2011-04-30*
-
 ### Contact
 
 Ryan Elmore
@@ -13,6 +11,16 @@ Ryan Elmore
 ### Installation
 
 To install this package from the source code available here, download the RDSTK.*.tar.gz file and R CMD INSTALL from the command line.
+
+### History
+
+Last update: 2011-May-03
+	- Added getCurlHandle as an argument to function calls
+	- Updated source to V1.0
+	- Modified documentation
+
+2011-Apr-30
+	- Uploaded original source code and tarball
 
 ### License
 

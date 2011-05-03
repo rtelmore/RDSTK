@@ -1,7 +1,7 @@
 Package: RDSTK
 Type: Package
 Title: An R wrapper for the Data Science Toolkit API
-Version: 0.1
+Version: 1.0
 Depends: plyr, rjson, RCurl
 Date: 2011-04-30
 Author: Ryan Elmore

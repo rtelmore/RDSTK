@@ -8,13 +8,12 @@ This function returns geographic information related to one or possibly more IP 
 }
 
 \usage{
-ip2coordinates(ip)
+ip2coordinates(ip, session=getCurlHandle())
 }
 
 \arguments{
-  \item{ip}{
-A string containing a single IP address or multiple, comma-separated IPs.
-}
+  \item{ip}{A string containing a single IP address or multiple, comma-separated IPs.}
+  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -39,6 +38,8 @@ http://www.datasciencetoolkit.org/developerdocs#ip2coordinates
 \author{
 Ryan Elmore
 }
+
+\seealso{ \code{\link{getURL}}, \code{\link{getCurlHandle}}}
 
 \examples{
 ip2coordinates("134.184.34.17, 48.82.68.161")

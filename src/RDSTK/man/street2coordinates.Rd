@@ -8,13 +8,12 @@ Converts a street address into useful geographic information.
 This function returns a host of geographic information related to a given street address.
 }
 \usage{
-street2coordinates(address)
+street2coordinates(address, session=getCurlHandle())
 }
 
 \arguments{
-  \item{address}{
-A text string giving a street address.
-}
+  \item{address}{A text string giving a street address.}
+  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -42,6 +41,8 @@ http://www.datasciencetoolkit.org/developerdocs#street2coordinates
 \author{
 Ryan Elmore
 }
+
+\seealso{ \code{\link{getURL}}, \code{\link{getCurlHandle}}}
 
 \examples{
 street2coordinates("2543 Graystone Place, Simi Valley, CA 93065")

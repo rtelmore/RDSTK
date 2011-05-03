@@ -8,13 +8,12 @@ This function will return information such as first and last name, title, etc. f
 }
 
 \usage{
-text2people(text)
+text2people(text, session=getCurlHandle())
 }
 
 \arguments{
-  \item{text}{
-A text string containing a person's name or a comma-separated list of names.
-}
+  \item{text}{A text string containing a person's name or a comma-separated list of names.}
+  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -35,6 +34,10 @@ http://www.datasciencetoolkit.org/developerdocs#text2people
 \author{
 Ryan Elmore
 }
+
+\seealso{ \code{\link{curlPerform}}, 
+		  \code{\link{getCurlHandle}},
+		  \code{\link{dynCurlReader}}}
 
 \examples{
 text2people("Tim O'Reilly, Archbishop Huxley")

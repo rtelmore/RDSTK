@@ -10,13 +10,12 @@ text of this string.  The output is a list that contains the extracted text.
 }
 
 \usage{
-html2text(html)
+html2text(html, session=getCurlHandle())
 }
 
 \arguments{
-  \item{html}{
-A string containing valid html code.
-}
+  \item{html}{A string containing valid html code.}
+  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -30,6 +29,10 @@ http://www.datasciencetoolkit.org/developerdocs#html2text
 \author{
 Ryan Elmore
 }
+
+\seealso{ \code{\link{curlPerform}}, 
+		  \code{\link{getCurlHandle}},
+		  \code{\link{dynCurlReader}}}
 
 \examples{
 html <- '<html><head><title>MyTitle</title></head><body><script type="text/javascript">something();</script><div>Some actual text</div></body></html>'

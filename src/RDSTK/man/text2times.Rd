@@ -6,11 +6,12 @@
 This function take a text string and returns any time-specific information that it finds.  
 }
 \usage{
-text2times(text)
+text2times(text, session=getCurlHandle())
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{text}{A text string containing possible time information.}
+  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -28,6 +29,10 @@ A data.frame containing
 \author{
 Ryan Elmore
 }
+
+\seealso{ \code{\link{curlPerform}}, 
+		  \code{\link{getCurlHandle}},
+		  \code{\link{dynCurlReader}}}
 
 \examples{
 text <- "02/01/2010, Meeting this Wednesday"
