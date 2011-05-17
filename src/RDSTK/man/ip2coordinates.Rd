@@ -42,5 +42,7 @@ Ryan Elmore
 \seealso{ \code{\link{getURL}}, \code{\link{getCurlHandle}}}
 
 \examples{
-ip2coordinates("134.184.34.17, 48.82.68.161")
+	\dontrun{
+		ip2coordinates("134.184.34.17, 48.82.68.161")
+	}
 }

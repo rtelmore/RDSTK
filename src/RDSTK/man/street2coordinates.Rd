@@ -45,5 +45,7 @@ Ryan Elmore
 \seealso{ \code{\link{getURL}}, \code{\link{getCurlHandle}}}
 
 \examples{
-street2coordinates("2543 Graystone Place, Simi Valley, CA 93065")
+	\dontrun{
+		street2coordinates("2543 Graystone Place, Simi Valley, CA 93065")
+	}
 }

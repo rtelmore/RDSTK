@@ -35,6 +35,8 @@ Ryan Elmore
 		  \code{\link{dynCurlReader}}}
 
 \examples{
-text <- "02/01/2010, Meeting this Wednesday"
-text2times(text)
+	\dontrun{
+		text <- "02/01/2010, Meeting this Wednesday"
+		text2times(text)
+	}
 }

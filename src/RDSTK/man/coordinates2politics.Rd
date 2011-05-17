@@ -34,5 +34,7 @@ Ryan Elmore
 \seealso{ \code{\link{getURL}}, \code{\link{getCurlHandle}}}
 
 \examples{
-coordinates2politics(37.769456, -122.429128)
+	\dontrun{
+		coordinates2politics(37.769456, -122.429128)
+	}
 }

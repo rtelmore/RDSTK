@@ -35,6 +35,8 @@ Ryan Elmore
 		  \code{\link{dynCurlReader}}}
 
 \examples{
-html <- '<html><head><title>MyTitle</title></head><body><script type="text/javascript">something();</script><div>Some actual text</div></body></html>'
-html2text(html)
+	\dontrun{
+		html <- '<html><head><title>MyTitle</title></head><body><script type="text/javascript">something();</script><div>Some actual text</div></body></html>'
+		html2text(html)
+	}
 }

@@ -40,5 +40,7 @@ Ryan Elmore
 		  \code{\link{dynCurlReader}}}
 
 \examples{
-text2people("Tim O'Reilly, Archbishop Huxley")
+	\dontrun{
+		text2people("Tim O'Reilly, Archbishop Huxley")
+	}
 }
