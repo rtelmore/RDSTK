@@ -24,3 +24,5 @@ h2t <- html2text(html)
 
 text <- "02/01/2010, Meeting this Wednesday"
 t2t <- text2times(text)
+
+## End Demo
