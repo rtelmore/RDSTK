@@ -1,9 +1,9 @@
 Package: RDSTK
 Type: Package
 Title: An R wrapper for the Data Science Toolkit API
-Version: 1.0
+Version: 1.1
 Depends: plyr, rjson, RCurl
-Date: 2011-04-30
+Date: 2013-01-31
 Author: Ryan Elmore
 Maintainer: Ryan Elmore <rtelmore@gmail.com>
 Description: This package provides an R interface to Pete Warden's Data
