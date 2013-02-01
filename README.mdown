@@ -14,7 +14,11 @@ To install this package from the source code available here, download the RDSTK.
 
 ### History
 
-Last update: 2011-May-03
+Last update: 2013-Jan-31
+
+- Made API more dynamic, since the DSTK allows you to locally clone their server. Custom APIs can be set using `options("RDSTK_api_base"="http://localhost:8080")`
+
+2011-May-03
 
 - Added getCurlHandle as an argument to function calls
 - Updated source to V1.0
@@ -26,6 +30,6 @@ Last update: 2011-May-03
 
 ### License
 
-Copyright (c) 2011, under the Simplified BSD License.
+Copyright (c) 2013, under the Simplified BSD License.
 For more information on FreeBSD see: http://www.opensource.org/licenses/bsd-license.php
 All rights reserved.
