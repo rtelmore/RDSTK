@@ -15,8 +15,8 @@ By default the packages accesses the API at www.datasciencetoolkit.org. Alternat
 \tabular{ll}{
 Package: \tab RDSTK\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-02-07\cr
+Version: \tab 1.1\cr
+Date: \tab 2013-05-13\cr
 License: \tab BSD\cr
 LazyLoad: \tab yes\cr
 }
