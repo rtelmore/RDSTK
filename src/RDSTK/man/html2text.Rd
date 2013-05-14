@@ -15,7 +15,9 @@ html2text(html, session=getCurlHandle())
 
 \arguments{
   \item{html}{A string containing valid html code.}
-  \item{session}{This is the CURLHandle object giving the structure for the options and that will process the command. For curlMultiPerform, this is an object of class code MultiCURLHandle-class.}
+  \item{session}{This is the CURLHandle object giving the structure for the
+ options and that will process the command. For curlMultiPerform, this is an
+ object of class code MultiCURLHandle-class.}
 }
 
 \value{
@@ -36,7 +38,9 @@ Ryan Elmore
 
 \examples{
 	\dontrun{
-		html <- '<html><head><title>MyTitle</title></head><body><script type="text/javascript">something();</script><div>Some actual text</div></body></html>'
+		html <- '<html><head><title>MyTitle</title></head><body><script
+		 type="text/javascript">something();</script><div>Some actual
+		 text</div></body></html>'
 		html2text(html)
 	}
 }

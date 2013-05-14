@@ -10,5 +10,5 @@ Description: This package provides an R interface to Pete Warden's Data
 				Science Toolkit.  See www.datasciencetoolkit.org for more 
 				information.  The source code for this package can be found at
 				github.com/rtelmore/RDSTK  Happy hacking!
-License: BSD
+License: BSD_2_clause + file LICENSE
 LazyLoad: yes
