@@ -66,3 +66,20 @@ text2times <- function(text, session=getCurlHandle()) {
   result <- ldply(fromJSON(r$value()), data.frame)
   return(result)
 }
+
+text2sentiment <- function(text, session=getCurlHandle()) {
+  api <- paste(getOption("RDSTK_api_base"), "/text2sentiment/", sep="")
+  r = dynCurlReader()
+  curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
+              curl=session)
+  result <- fromJSON(r$value())
+  return(result)
+}
+
+coordinates2statistics <- function(latitude, longitude, statistic, session=getCurlHandle()) {
+  api <- paste(getOption("RDSTK_api_base"), "/coordinates2statistics/", sep="")
+  r <- getURL(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""), curl=session)
+  result <- ldply(fromJSON(r), data.frame)
+  return(result)
+}
+
