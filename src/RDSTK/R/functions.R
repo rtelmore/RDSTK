@@ -12,7 +12,10 @@
 street2coordinates <- function(address, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/street2coordinates/", sep="")
   get.addy <- getURL(paste(api, URLencode(address), sep=""), curl=session)
-  result <- ldply(fromJSON(get.addy), data.frame)
+  clean.addy <- lapply(fromJSON(get.addy), 
+                      lapply, 
+                      function(x) ifelse(is.null(x), NA, x))
+  result <- ldply(clean.addy, data.frame)
   names(result)[1] <- "full.address"
   return(result)
 }
@@ -20,7 +23,10 @@ street2coordinates <- function(address, session=getCurlHandle()) {
 ip2coordinates <- function(ip, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/ip2coordinates/", sep="")
   get.ips <- getURL(paste(api, URLencode(ip), sep=""), curl=session) 
-  result <- ldply(fromJSON(get.ips), data.frame)
+  clean.ips <- lapply(fromJSON(get.ips), 
+                      lapply, 
+                      function(x) ifelse(is.null(x), NA, x))
+  result <- ldply(clean.ips, data.frame)
   names(result)[1] <- "ip.address"
   return(result)
 }
@@ -45,7 +51,10 @@ text2people <- function(text, session=getCurlHandle()) {
   r = dynCurlReader()
   curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
               curl=session)
-  result <- ldply(fromJSON(r$value()), data.frame)
+  clean.r <- lapply(fromJSON(r$value()), 
+                      lapply, 
+                      function(x) ifelse(is.null(x), NA, x))
+  result <- ldply(clean.r, data.frame)
   return(result)
 }
 
@@ -54,8 +63,7 @@ html2text <- function(html, session=getCurlHandle()) {
   r = dynCurlReader()
   curlPerform(postfields=html, url=api, post=1L, writefunction=r$update, 
               curl=session)
-  result <- fromJSON(r$value())
-  return(result)
+  return(fromJSON(r$value()))
 }
 
 text2times <- function(text, session=getCurlHandle()) {
@@ -63,7 +71,10 @@ text2times <- function(text, session=getCurlHandle()) {
   r = dynCurlReader()
   curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
               curl=session)
-  result <- ldply(fromJSON(r$value()), data.frame)
+  clean.r <- lapply(fromJSON(r$value()), 
+                      lapply, 
+                      function(x) ifelse(is.null(x), NA, x))
+  result <- ldply(clean.r, data.frame)
   return(result)
 }
 
@@ -72,14 +83,17 @@ text2sentiment <- function(text, session=getCurlHandle()) {
   r = dynCurlReader()
   curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
               curl=session)
-  result <- fromJSON(r$value())
-  return(result)
+  return(fromJSON(r$value()))
 }
 
-coordinates2statistics <- function(latitude, longitude, statistic, session=getCurlHandle()) {
+coordinates2statistics <- function(latitude, 
+                                   longitude, 
+                                   statistic = "population_density", 
+                                   session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/coordinates2statistics/", sep="")
+  print(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""))
   r <- getURL(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""), curl=session)
-  result <- ldply(fromJSON(r), data.frame)
+  result <- ldply(fromJSON(r$value()), data.frame)
   return(result)
 }
 

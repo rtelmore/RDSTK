@@ -25,4 +25,7 @@ h2t <- html2text(html)
 text <- "02/01/2010, Meeting this Wednesday"
 t2t <- text2times(text)
 
+coordinates2statistics(37.769456, -122.429128)
+
+text2sentiment("I hate this hotel")
 ## End Demo
