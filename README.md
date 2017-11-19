@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/rtelmore/ballr.svg?branch=master)](https://travis-ci.org/rtelmore/RDSTK)
 [![Coverage Status](https://img.shields.io/codecov/c/github/rtelmore/ballr/master.svg)](https://codecov.io/github/rtelmore/RDSTK?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ballr)](https://cran.r-project.org/package=RDSTK)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/ballr)](http://www.r-pkg.org/pkg/RDSTK)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/RDSTK)](http://www.r-pkg.org/pkg/RDSTK)
 
 For more information on the these APIs see http://www.datasciencetoolkit.org
 
