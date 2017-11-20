@@ -11,14 +11,14 @@
 #' \code{options("RDSTK_api_base"="http://localhost:8080")}.
 #' 
 #' @section RDSTK Functions:
-#'   \code{\link{coordinates2politics}},
-#'   \code{\link{coordinates2statistics}},
-#'   \code{\link{html2text}},
-#'   \code{\link{ip2coordinates}},
-#'   \code{\link{street2coordinates}},
-#'   \code{\link{text2people}},
-#'   \code{\link{text2sentences}},
-#'   \code{\link{text2sentiment}},
+#'   \code{\link{coordinates2politics}}\cr
+#'   \code{\link{coordinates2statistics}}\cr
+#'   \code{\link{html2text}}\cr
+#'   \code{\link{ip2coordinates}}\cr
+#'   \code{\link{street2coordinates}}\cr
+#'   \code{\link{text2people}}\cr
+#'   \code{\link{text2sentences}}\cr
+#'   \code{\link{text2sentiment}}\cr
 #'   \code{\link{text2times}}
 #' 
 #' @docType package
