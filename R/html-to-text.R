@@ -32,8 +32,8 @@
 #' @export
 html2text <- function(html, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/html2text/", sep="")
-  r = dynCurlReader()
-  curlPerform(postfields=html, url=api, post=1L, writefunction=r$update, 
-              curl=session)
-  return(fromJSON(r$value()))
+  r = RCurl::dynCurlReader()
+  RCurl::curlPerform(postfields=html, url=api, post=1L, writefunction=r$update, 
+                     curl=session)
+  return(rjson::fromJSON(r$value()))
 }

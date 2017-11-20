@@ -43,7 +43,7 @@ coordinates2statistics <- function(latitude,
                                    session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/coordinates2statistics/", sep="")
   print(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""))
-  r <- getURL(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""), curl=session)
-  result <- ldply(fromJSON(r$value()), data.frame)
+  r <- RCurl::getURL(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""), curl=session)
+  result <- plyr::ldply(fromJSON(r$value()), data.frame)
   return(result)
 }

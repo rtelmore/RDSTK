@@ -28,6 +28,6 @@
 
 coordinates2politics <- function(latitude, longitude, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/coordinates2politics/", sep="")
-  result <- getURL(paste(api, latitude, "%2c", longitude, sep=""), curl=session)
+  result <- RCurl::getURL(paste(api, latitude, "%2c", longitude, sep=""), curl=session)
   return(result)
 }

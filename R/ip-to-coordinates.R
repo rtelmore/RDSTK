@@ -36,11 +36,11 @@
 
 ip2coordinates <- function(ip, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/ip2coordinates/", sep="")
-  get.ips <- getURL(paste(api, URLencode(ip), sep=""), curl=session) 
+  get.ips <- RCurl::getURL(paste(api, URLencode(ip), sep=""), curl=session) 
   clean.ips <- lapply(fromJSON(get.ips), 
                       lapply, 
                       function(x) ifelse(is.null(x), NA, x))
-  result <- ldply(clean.ips, data.frame)
+  result <- plyr::ldply(clean.ips, data.frame)
   names(result)[1] <- "ip.address"
   return(result)
 }
