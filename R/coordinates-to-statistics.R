@@ -32,7 +32,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' 		coordinates2statistics(37.769456, -122.429128, 'population_density')
+#' coordinates2statistics(37.769456, -122.429128, 'population_density')
 #' }
 #' 
 #' @export

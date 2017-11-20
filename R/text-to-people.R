@@ -30,7 +30,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' 		text2people("Tim O'Reilly, Archbishop Huxley")
+#' text2people("Tim O'Reilly, Archbishop Huxley")
 #' }
 #' 
 #' @export

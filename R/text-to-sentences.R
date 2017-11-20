@@ -23,9 +23,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' 			sentences <- "But this does, it contains enough words. So does this 
-#' 			one, it appears correct. This is long and complete enough too."
-#' 			text2sentences(sentences)
+#' sentences <- "But this does, it contains enough words. So does this 
+#'               one, it appears correct. This is long and complete enough
+#'               too."
+#' text2sentences(sentences)
 #' }
 #' 
 #' @export

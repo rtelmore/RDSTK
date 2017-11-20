@@ -25,7 +25,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' 		text2sentiment("I love this hotel!")
+#' text2sentiment("I love this hotel!")
 #' }
 #' 
 #' @export

@@ -21,7 +21,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' 	coordinates2politics(37.769456, -122.429128)
+#' coordinates2politics(37.769456, -122.429128)
 #' }
 #' 
 #' @export

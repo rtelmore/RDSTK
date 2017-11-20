@@ -29,7 +29,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' 	ip2coordinates("134.184.34.17, 48.82.68.161")
+#' ip2coordinates("134.184.34.17, 48.82.68.161")
 #' }
 #' 
 #' @export
