@@ -21,9 +21,9 @@
 #'   \item{matched_string}{The matched string used to look up this information.}
 #'   
 #' @seealso 
-#'   \code{\link{curlPerform}},
-#'   \code{\link{getCurlHandle}},
-#'   \code{\link{dynCurlReader}}
+#'   \code{\link{RCurl::curlPerform}},
+#'   \code{\link{RCurl::getCurlHandle}},
+#'   \code{\link{RCurl::dynCurlReader}}
 #'
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#text2people
@@ -39,7 +39,7 @@ text2people <- function(text, session=getCurlHandle()) {
   r = RCurl::dynCurlReader()
   RCurl::curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
                      curl=session)
-  clean.r <- lapply(fromJSON(r$value()), 
+  clean.r <- lapply(rjson::fromJSON(r$value()), 
                     lapply, 
                     function(x) ifelse(is.null(x), NA, x))
   result <- plyr::ldply(clean.r, data.frame)

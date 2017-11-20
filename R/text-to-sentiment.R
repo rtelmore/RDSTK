@@ -16,9 +16,9 @@
 #'    -5 (very negative) to +5 (very positive).}
 #'   
 #' @seealso 
-#'   \code{\link{curlPerform}},
-#'   \code{\link{getCurlHandle}},
-#'   \code{\link{dynCurlReader}}
+#'   \code{\link{RCurl::curlPerform}},
+#'   \code{\link{RCurl::getCurlHandle}},
+#'   \code{\link{RCurl::dynCurlReader}}
 #'
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#text2sentiment

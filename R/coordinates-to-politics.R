@@ -14,7 +14,7 @@
 #' @return 
 #'   Returns a JSON string.  
 #'   
-#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
+#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
 #' 
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#coordinates2politics

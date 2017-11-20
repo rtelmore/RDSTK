@@ -25,7 +25,7 @@
 #'  \item{latitude}{The latitude of the address.}
 #'  \item{street_name}{Why are you still reading this?  It's a street name!}
 #'
-#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
+#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
 #' 
 #' @references 
 #'   http://www.datasciencetoolkit.org/developerdocs#street2coordinates
@@ -39,7 +39,7 @@
 street2coordinates <- function(address, session=getCurlHandle(), ...) {
   api <- paste(getOption("RDSTK_api_base"), "/street2coordinates/", sep="")
   get.addy <- RCurl::getURL(paste(api, URLencode(address, reserved = TRUE), sep=""), curl=session, ...)
-  clean.addy <- lapply(fromJSON(get.addy), 
+  clean.addy <- lapply(rjson::fromJSON(get.addy), 
                        lapply, 
                        function(x) ifelse(is.null(x), NA, x))
   result <- plyr::ldply(clean.addy, data.frame)

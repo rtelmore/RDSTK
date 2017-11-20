@@ -22,7 +22,7 @@
 #'   \item{country_code3}{If two digits aren't enough!}
 #'   \item{area_code}{Area code in the US; not sure elsewhere}
 #'   
-#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
+#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
 #' 
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#ip2coordinates  
@@ -37,7 +37,7 @@
 ip2coordinates <- function(ip, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/ip2coordinates/", sep="")
   get.ips <- RCurl::getURL(paste(api, URLencode(ip), sep=""), curl=session) 
-  clean.ips <- lapply(fromJSON(get.ips), 
+  clean.ips <- lapply(rjson::fromJSON(get.ips), 
                       lapply, 
                       function(x) ifelse(is.null(x), NA, x))
   result <- plyr::ldply(clean.ips, data.frame)

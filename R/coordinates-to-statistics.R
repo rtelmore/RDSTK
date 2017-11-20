@@ -24,8 +24,8 @@
 #'   \item{proportion_of}{If the value is proportional (eg the percentage of residents who are below the poverty level) this gives the name of the statistic that it's a proportion of.}
 #'      
 #' @seealso 
-#'   \code{\link{getURL}},
-#'   \code{\link{getCurlHandle}}
+#'   \code{\link{RCurl::getURL}},
+#'   \code{\link{RCurl::getCurlHandle}}
 #'
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#coordinates2statistics
@@ -44,6 +44,6 @@ coordinates2statistics <- function(latitude,
   api <- paste(getOption("RDSTK_api_base"), "/coordinates2statistics/", sep="")
   print(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""))
   r <- RCurl::getURL(paste(api, latitude, "%2c", longitude, "?statistics=", statistic, sep=""), curl=session)
-  result <- plyr::ldply(fromJSON(r$value()), data.frame)
+  result <- plyr::ldply(rjson::fromJSON(r$value()), data.frame)
   return(result)
 }
