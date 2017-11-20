@@ -1,0 +1,13 @@
+^.*\.Rout$
+^.*makefile$
+^packrat/
+^\.Rprofile$
+^.*\.Rproj$
+^\.Rproj\.user$
+^codecov\.yml$
+^\.travis\.yml$
+cran-comments.md
+fig/
+tmp/
+src/
+.document.R
