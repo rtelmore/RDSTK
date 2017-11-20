@@ -38,11 +38,11 @@
 #' @export
 street2coordinates <- function(address, session=getCurlHandle(), ...) {
   api <- paste(getOption("RDSTK_api_base"), "/street2coordinates/", sep="")
-  get.addy <- getURL(paste(api, URLencode(address, reserved = TRUE), sep=""), curl=session, ...)
+  get.addy <- RCurl::getURL(paste(api, URLencode(address, reserved = TRUE), sep=""), curl=session, ...)
   clean.addy <- lapply(fromJSON(get.addy), 
                        lapply, 
                        function(x) ifelse(is.null(x), NA, x))
-  result <- ldply(clean.addy, data.frame)
+  result <- plyr::ldply(clean.addy, data.frame)
   names(result)[1] <- "full.address"
   return(result)
 }

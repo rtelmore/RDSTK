@@ -32,9 +32,9 @@
 
 text2sentences <- function(text, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/text2sentences/", sep="")
-  r = dynCurlReader()
-  curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
-              curl=session)
-  result <- fromJSON(r$value())
+  r = RCurl::dynCurlReader()
+  RCurl::curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
+                     curl=session)
+  result <- rjson::fromJSON(r$value())
   return(result)
 }

@@ -32,8 +32,8 @@
 
 text2sentiment <- function(text, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/text2sentiment/", sep="")
-  r = dynCurlReader()
-  curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
-              curl=session)
-  return(fromJSON(r$value()))
+  r = RCurl::dynCurlReader()
+  RCurl::curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
+                     curl=session)
+  return(rjson::fromJSON(r$value()))
 }

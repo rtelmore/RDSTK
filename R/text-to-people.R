@@ -36,12 +36,12 @@
 #' @export
 text2people <- function(text, session=getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/text2people/", sep="")
-  r = dynCurlReader()
-  curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
-              curl=session)
+  r = RCurl::dynCurlReader()
+  RCurl::curlPerform(postfields=text, url=api, post=1L, writefunction=r$update,
+                     curl=session)
   clean.r <- lapply(fromJSON(r$value()), 
                     lapply, 
                     function(x) ifelse(is.null(x), NA, x))
-  result <- ldply(clean.r, data.frame)
+  result <- plyr::ldply(clean.r, data.frame)
   return(result)
 }
