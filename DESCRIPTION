@@ -2,7 +2,6 @@ Package: RDSTK
 Type: Package
 Title: An R wrapper for the Data Science Toolkit API
 Version: 2.1.0
-Depends: plyr, rjson, RCurl
 Date: 2013-05-13
 Authors@R: c(
     person("Ryan", "Elmore", email = "rtelmore@gmail.com", role = "cre"),

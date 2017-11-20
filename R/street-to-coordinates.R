@@ -8,6 +8,7 @@
 #' @param session The CURLHandle object giving the structure for the options 
 #'   and that will process the command. For curlMultiPerform, this is an object 
 #'   of class code MultiCURLHandle-class.
+#' @param ... Additional args
 #' 
 #' @return A data.frame containing:
 #'  \item{full.address}{The complete address that was analyzed.}
@@ -25,7 +26,7 @@
 #'  \item{latitude}{The latitude of the address.}
 #'  \item{street_name}{Why are you still reading this?  It's a street name!}
 #'
-#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
+#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
 #' 
 #' @references 
 #'   http://www.datasciencetoolkit.org/developerdocs#street2coordinates
@@ -36,9 +37,9 @@
 #' }
 #' 
 #' @export
-street2coordinates <- function(address, session=getCurlHandle(), ...) {
+street2coordinates <- function(address, session = RCurl::getCurlHandle(), ...) {
   api <- paste(getOption("RDSTK_api_base"), "/street2coordinates/", sep="")
-  get.addy <- RCurl::getURL(paste(api, URLencode(address, reserved = TRUE), sep=""), curl=session, ...)
+  get.addy <- RCurl::getURL(paste(api, utils::URLencode(address, reserved = TRUE), sep=""), curl=session, ...)
   clean.addy <- lapply(rjson::fromJSON(get.addy), 
                        lapply, 
                        function(x) ifelse(is.null(x), NA, x))

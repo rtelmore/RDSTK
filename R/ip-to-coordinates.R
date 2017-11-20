@@ -3,7 +3,7 @@
 #' @description This function returns geographic information 
 #'   related to one or possibly more IP addresses.
 #'
-#' @param address A string containing a single IP address or multiple, 
+#' @param ip A string containing a single IP address or multiple, 
 #'   comma-separated IPs.
 #' @param session The CURLHandle object giving the structure for the options 
 #'   and that will process the command. For curlMultiPerform, this is an object 
@@ -22,7 +22,7 @@
 #'   \item{country_code3}{If two digits aren't enough!}
 #'   \item{area_code}{Area code in the US; not sure elsewhere}
 #'   
-#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
+#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
 #' 
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#ip2coordinates  
@@ -34,12 +34,12 @@
 #' 
 #' @export
 
-ip2coordinates <- function(ip, session=getCurlHandle()) {
+ip2coordinates <- function(ip, session = RCurl::getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/ip2coordinates/", sep="")
-  get.ips <- RCurl::getURL(paste(api, URLencode(ip), sep=""), curl=session) 
+  get.ips <- RCurl::getURL(paste(api, utils::URLencode(ip), sep = ""), 
+                           curl = session) 
   clean.ips <- lapply(rjson::fromJSON(get.ips), 
-                      lapply, 
-                      function(x) ifelse(is.null(x), NA, x))
+                      lapply, function(x) ifelse(is.null(x), NA, x))
   result <- plyr::ldply(clean.ips, data.frame)
   names(result)[1] <- "ip.address"
   return(result)

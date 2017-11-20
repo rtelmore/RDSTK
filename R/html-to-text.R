@@ -14,9 +14,9 @@
 #'   A list with the main text in the html.
 #'   
 #' @seealso 
-#'   \code{\link{RCurl::curlPerform}},
-#'   \code{\link{RCurl::getCurlHandle}},
-#'   \code{\link{RCurl::dynCurlReader}}
+#'   \code{\link{curlPerform}},
+#'   \code{\link{getCurlHandle}},
+#'   \code{\link{dynCurlReader}}
 #'
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#html2text
@@ -30,7 +30,7 @@
 #' }
 #' 
 #' @export
-html2text <- function(html, session=getCurlHandle()) {
+html2text <- function(html, session = RCurl::getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/html2text/", sep="")
   r = RCurl::dynCurlReader()
   RCurl::curlPerform(postfields=html, url=api, post=1L, writefunction=r$update, 

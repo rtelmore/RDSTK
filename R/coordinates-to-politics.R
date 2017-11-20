@@ -14,7 +14,7 @@
 #' @return 
 #'   Returns a JSON string.  
 #'   
-#' @seealso \code{\link{RCurl::getURL}}, \code{\link{RCurl::getCurlHandle}}
+#' @seealso \code{\link{getURL}}, \code{\link{getCurlHandle}}
 #' 
 #' @references 
 #'  http://www.datasciencetoolkit.org/developerdocs#coordinates2politics
@@ -26,7 +26,8 @@
 #' 
 #' @export
 
-coordinates2politics <- function(latitude, longitude, session=getCurlHandle()) {
+coordinates2politics <- function(latitude, longitude, 
+                                 session = RCurl::getCurlHandle()) {
   api <- paste(getOption("RDSTK_api_base"), "/coordinates2politics/", sep="")
   result <- RCurl::getURL(paste(api, latitude, "%2c", longitude, sep=""), curl=session)
   return(result)
