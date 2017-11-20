@@ -2,7 +2,7 @@
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/rtelmore/RDSTK.svg?branch=master)](https://travis-ci.org/rtelmore/RDSTK)
-[![Coverage Status](https://img.shields.io/codecov/c/github/rtelmore/RDSTK/master.svg)](https://codecov.io/github/rtelmore/RDSTK?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/rtelmore/RDSTK/master.svg)](https://codecov.io/github/rtelmore/RDSTK)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/RDSTK)](https://cran.r-project.org/package=RDSTK)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/RDSTK)](http://www.r-pkg.org/pkg/RDSTK)
 
