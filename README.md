@@ -16,11 +16,21 @@ Ryan Elmore
 
 ### Installation
 
+```
+install.packages("devtools")
+library(devtools)
+install_github("rtelmore/ballr")
+```
+
 To install this package from the source code available here, download the RDSTK.*.tar.gz file and R CMD INSTALL from the command line.
 
 ### History
 
-Last update: 2013-Jan-31
+Last Update: 20 Nov 2017
+- Completely refactored the code base 
+- Need to remove plyr code
+
+2013-Jan-31:
 
 - Made API more dynamic, since the DSTK allows you to locally clone their server. Custom APIs can be set using `options("RDSTK_api_base"="http://localhost:8080")`
 
