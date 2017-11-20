@@ -19,7 +19,7 @@ Ryan Elmore
 ```
 install.packages("devtools")
 library(devtools)
-install_github("rtelmore/ballr")
+install_github("rtelmore/RDSTK")
 ```
 
 To install this package from the source code available here, download the RDSTK.*.tar.gz file and R CMD INSTALL from the command line.
